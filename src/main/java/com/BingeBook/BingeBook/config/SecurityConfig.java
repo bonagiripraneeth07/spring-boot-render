@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(requests -> requests
                         .requestMatchers( "login","users","register","watchbucket/watched/{id}","watchbucket/watchlater/{id}","addwatchlater","addwatched","check/{id}").permitAll() // Allow unauthenticated access to /public/**
                         //.requestMatchers("/admin/**").authenticated() // Restrict access to /admin/** to authenticated users
-                        .anyRequest().authenticated() // All other requests require authentication
+                        .anyRequest().permitAll()// All other requests require authentication
                 )
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session ->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
