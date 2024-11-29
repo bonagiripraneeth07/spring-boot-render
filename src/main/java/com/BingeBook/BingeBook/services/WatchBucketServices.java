@@ -53,9 +53,11 @@ return watchedRepo.findByUserid(id);
         System.out.println(watchLater.getWatchlater() + " from watchlater ");
         int id = watchLater.getId();
         System.out.println(id);
-        if (watchLaterRepo.findById(id)==null){
+        if (watchLaterRepo.findById(id).isEmpty()){
+            System.out.println("From null");
             watchLaterRepo.save(watchLater);
         }else{
+            System.out.println("from else");
             watchLaterRepo.appendMovieIdsToWatched(watchLater.getId(),watchLater.getWatchlater());
         }
     }
@@ -63,5 +65,10 @@ return watchedRepo.findByUserid(id);
     public void addWatched(Watched watched) {
         System.out.println(watched + " from services");
         watchedRepo.save(watched);
+    }
+
+    public int check(int id) {
+return watchedRepo.findByWatched(id);
+
     }
 }

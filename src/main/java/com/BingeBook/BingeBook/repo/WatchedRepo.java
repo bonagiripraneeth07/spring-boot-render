@@ -11,4 +11,5 @@ import java.util.List;
 @Repository
 public interface WatchedRepo extends JpaRepository<Watched,Integer> {
       List<Watched> findByUserid( int id) ;
+      int findByWatched(int id);
 }

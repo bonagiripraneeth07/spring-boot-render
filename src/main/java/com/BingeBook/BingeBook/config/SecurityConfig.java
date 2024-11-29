@@ -30,7 +30,7 @@ public class SecurityConfig {
 
                 //.authorizeHttpRequests(request->request.anyRequest().authenticated())
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers( "login","users","register","watchbucket/watched/{id}","watchbucket/watchlater/{id}","addwatchlater","addwatched").permitAll() // Allow unauthenticated access to /public/**
+                        .requestMatchers( "login","users","register","watchbucket/watched/{id}","watchbucket/watchlater/{id}","addwatchlater","addwatched","check/{id}").permitAll() // Allow unauthenticated access to /public/**
                         //.requestMatchers("/admin/**").authenticated() // Restrict access to /admin/** to authenticated users
                         .anyRequest().authenticated() // All other requests require authentication
                 )

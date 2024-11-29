@@ -17,7 +17,7 @@ import java.util.List;
 public class WatchLater {
     @Id
     private int id;
-    private List<Integer> watchlater;
+    private List<Integer> watchlater;   
 }
 
 

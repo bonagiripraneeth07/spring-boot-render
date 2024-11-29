@@ -46,8 +46,6 @@ public String  register(@RequestBody User user){
 public long login(@RequestBody User user){
     System.out.println(user.getUsername());
     System.out.println(user.getPassword());
-
-
     return userServices.findUser(user.getUsername(), user.getPassword());
 }
 @GetMapping("/users")
@@ -83,5 +81,14 @@ public long login(@RequestBody User user){
     public void addWatched(@RequestBody Watched watched){
     System.out.println(watched);
         watchBucketServices.addWatched(watched);
+
+
+
 }
+
+    //26-11-24 updating ,deleting...
+//    @GetMapping("/check/{id}")
+//            public int check(@PathVariable int id){
+//      return   watchBucketServices.check(id);
+//    }
 }
